@@ -105,4 +105,10 @@ My Testing panel reads: "Pytest Discovery Error"
 
 This has probably happened because either:
 1. You are using the wrong virtual environment. See section on activating the virtual environment.
-2. You haven't installed the dependencies by running `pip install .[dev]`. See the section on installing dependencies.
+2. You haven't installed the dependencies by running `pip install .[dev]`. See section on installing dependencies.
+
+### 3.3 Linting
+
+Pre-commit doesn't seem to be checking the code.
+
+This happens when you haven't run `pre-commit install`. See section on pre-commit.
