@@ -1,0 +1,59 @@
+# PACKAGE
+
+## Based on: https://peps.python.org/pep-0621/#example
+[project]
+name = "superhelpful"
+dynamic = ["version"]
+license = {text = "MIT"}
+requires-python = ">=3.8"
+classifiers = [
+  "Programming Language :: Python :: 3"
+]
+
+dependencies = [
+    "pandas>=1",
+    "numpy>=1"
+]
+
+## Based on: https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata
+[tool.setuptools.dynamic]
+version = {attr = "superhelpful.__version__"}
+
+# INSTALL
+
+## Based on: https://github.com/pypa/setuptools/blob/main/docs/userguide/quickstart.rst#basic-use
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]  # List of folders that contain the packages
+include = ["superhelpful*"]  # Package names should match these glob patterns
+
+## Optional install modes e.g. pip install superhelpful[dev]
+[project.optional-dependencies]
+notebook = ["ipykernel"]
+test = ["pytest>=6"]
+dev = ["ruff>=0.0.252", "pytest>=6", "pre-commit>=3.1", "ipykernel"]
+
+# TESTING
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+# LINTING
+
+# Ruff
+[tool.ruff]
+line-length = 80
+select = [
+  "E",
+  "F",
+  "W",
+  "Q",
+  "UP",
+  "I",
+  "N",
+]
+target-version = "py310"
+extend-exclude = ["venv"]  # Exclude
