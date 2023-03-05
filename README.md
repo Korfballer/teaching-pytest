@@ -2,7 +2,7 @@
 
 This repository creates an example python package called `superhelpful` and demonstrates how to write basic tests for it.
 
-This repository has been built on the Windows Operating System and has not been tested on a Linux.
+This repository has been built on a Windows Operating System and has not been tested on Linux.
 
 ## 1. Setup
 
