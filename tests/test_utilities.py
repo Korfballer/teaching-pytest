@@ -6,10 +6,9 @@ import datetime
 # Third party imports
 import pytest
 from pandas import Timestamp
-from superhelpful.utilities import is_working_hours
 
 # Local application imports
-# n/a
+from superhelpful.utilities import is_working_hours
 
 
 class TestIsWorkingHours:
