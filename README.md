@@ -4,18 +4,27 @@ This repository creates an example python package called `superhelpful` and demo
 
 This repository has been built on a Windows Operating System and has not been tested on Linux.
 
-## 1. Setup
+## 1. Content
 
-### 1.1 Virtual Environment
+The content of this repo aims to demonstrate:
+* Plain asserts (`assert actual == expected`)
+* Third party asserts (`np.testing.assert_allclose`, `pd.testing.assert_frame_equal`)
+* Structuring tests
+* Fixtures (`@pytest.fixture`) and their scope (`@pytest.fixture(scope="session")`)
+* Paramaterization (`@pytest.mark.parametrize`)
+* Skip logic (`@pytest.skip`, `@pytest.skipif`)
+* Configuring tests via the `conftest.py`
+* Mocking (`fastapi.testclient.TestClient`)
+* Register markers in a `pytest.ini`
 
-#### 1.1.1 Create Virtual Environment
+## 2. Setup
+
+### 2.1 Virtual Environment
 
 When you first use the repository, create the virtual environment.
 ```
 python -m venv ./venv
 ```
-
-#### 1.1.2 Activate Virtual Environment
 
 Activate the python environment
 ```shell
@@ -28,15 +37,13 @@ Activate the python environment
 source ./venv/bin/activate
 ```
 
-#### 1.1.3 Install dependencies
-
-Install the package (`superhelpful`) in "dev" mode.
+Install dependencies via the `superhelpful` package in "dev" mode.
 ```
 # Install package
 pip install .[dev]
 ```
 
-#### 1.1.4 Generate requirement files
+### 2.2. Generate requirement files
 
 As per: https://stackoverflow.com/questions/62885911/pip-freeze-creates-some-weird-path-instead-of-the-package-version
 i.e. we don't want personal filepaths for the locally built package `superhelpful`
@@ -47,25 +54,21 @@ To generate the requirements-dev.txt, from the dev install:
 pip list --local --format=freeze > requirements-dev.txt
 ```
 
-### 1.2 Pre-commit
+### 2.3 Pre-commit
 
 Ensure pre-commit is installed
 ```
 pre-commit install
 ```
 
-## 2 Teardown
+## 3 Teardown
 
-### 2.1 Virtual Environment
-
-#### 2.1.1 Deactivate Virtual Environment
+### 3.1 Virtual Environment
 
 Deactivate the python environment
 ```
 deactivate
 ```
-
-#### 2.1.2 Delete Virtual Environment
 
 Delete the python environment
 ```shell
@@ -78,9 +81,9 @@ rm venv
 rm -rf venv
 ```
 
-## 3 FAQ
+## 4 FAQ
 
-### 3.1 Configuration
+### 4.1 Configuration
 
 On Windows, how do I fix the following error?
 `./venv/Scripts/activate : File .\venv\Scripts\Activate.ps1 cannot be loaded because running scripts is disabled on this system.`
@@ -99,7 +102,7 @@ In Visual Studio Code:
 * Start a new terminal (Terminal > New Terminal)
 * Test this has worked by activating the virtual environment (see instructions above)
 
-### 3.2 Testing
+### 4.2 Testing
 
 My Testing panel reads: "Pytest Discovery Error"
 
@@ -107,7 +110,7 @@ This has probably happened because either:
 1. You are using the wrong virtual environment. See section on activating the virtual environment.
 2. You haven't installed the dependencies by running `pip install .[dev]`. See section on installing dependencies.
 
-### 3.3 Linting
+### 4.3 Linting
 
 Pre-commit doesn't seem to be checking the code.
 

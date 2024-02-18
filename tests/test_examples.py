@@ -36,7 +36,7 @@ class TestFixtures(Data):
         assert actual == expected
 
 
-class TestAdditionalAsserts:
+class TestThirdPartyAsserts:
     """Test beyond-plain asserts."""
 
     def test_absolute_tolerance(self):
