@@ -9,6 +9,7 @@ This repository has been built on a Windows Operating System and has not been te
 The content of this repo aims to demonstrate:
 * Plain asserts (`assert actual == expected`)
 * Third party asserts (`np.testing.assert_allclose`, `pd.testing.assert_frame_equal`)
+* Checking for correctly raised errors (`pytest.raises`)
 * Structuring tests
 * Fixtures (`@pytest.fixture`) and their scope (`@pytest.fixture(scope="session")`)
 * Paramaterization (`@pytest.mark.parametrize`)
